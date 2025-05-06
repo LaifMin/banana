@@ -1,140 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultural Heritage Data System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
+Cultural Heritage Data Management System 🏛️
+This project is an academic initiative designed for managing cultural heritage data. It includes both a server and client component along with a command-based interface for searching and managing cultural heritage entries.
 
-        h1, h2, h3 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
+📋 Requirements
+Java 17+
 
-        code {
-            background-color: #e9ecef;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
+Maven 3.6+
 
-        pre {
-            background-color: #e9ecef;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+Data file: Archeologia---Storia-e-Tradizioni---Regione-Marche.csv
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
+All text files must be encoded in UTF-8
 
-        th, td {
-            border: 1px solid #dee2e6;
-            padding: 8px;
-            text-align: left;
-        }
+🚀 Installation
+Clone the repository and build the project using Maven:
 
-        th {
-            background-color: #3498db;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .license {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Cultural Heritage Data Management System 🏛️</h1>
-
-    <h2 id="requirements">📋 Requirements</h2>
-    <ul>
-        <li>Java 17+</li>
-        <li>Maven 3.6+</li>
-        <li>Data file <code>Archeologia---Storia-e-Tradizioni---Regione-Marche.csv</code></li>
-        <li>UTF-8 encoding for all text files</li>
-    </ul>
-
-    <h2 id="installation">🚀 Installation</h2>
-    <pre><code># Clone repository
+bash
+Copy
+Edit
+# Clone repository
 git clone https://github.com/yourusername/cultural-heritage-system.git
 cd cultural-heritage-system
 
 # Build project
-mvn clean package</code></pre>
+mvn clean package
+🖥️ Usage
+Start Server
+Run the server with the following command:
 
-    <h2 id="usage">🖥️ Usage</h2>
-    <h3>Start Server</h3>
-    <pre><code>java -jar target/heritage-server.jar</code></pre>
+bash
+Copy
+Edit
+java -jar target/heritage-server.jar
+Start Client
+Run the client with the following command:
 
-    <h3>Start Client</h3>
-    <pre><code>java -jar target/heritage-client.jar</code></pre>
+bash
+Copy
+Edit
+java -jar target/heritage-client.jar
+Connection Defaults
+Parameter	Value
+Server Address	localhost
+Port	12345
 
-    <h3>Connection Defaults</h3>
-    <table>
-        <tr><th>Parameter</th><th>Value</th></tr>
-        <tr><td>Server Address</td><td><code>localhost</code></td></tr>
-        <tr><td>Port</td><td><code>12345</code></td></tr>
-    </table>
+⌨️ Command Reference
+Basic Commands
+Command	Description
+HELP	Show command reference
+END	Disconnect from server
 
-    <h2 id="command-reference">⌨️ Command Reference</h2>
-    <h3>Basic Commands</h3>
-    <table>
-        <tr><th>Command</th><th>Description</th></tr>
-        <tr><td><code>HELP</code></td><td>Show command reference</td></tr>
-        <tr><td><code>END</code></td><td>Disconnect from server</td></tr>
-    </table>
+Search Operations
+Search commands follow this syntax:
 
-    <h3>Search Operations</h3>
-    <pre><code>SEARCH [OPTION] "QUERY"</code></pre>
-    <table>
-        <tr><th>Option</th><th>Search Type</th><th>Example</th></tr>
-        <tr><td><code>-n</code></td><td>Exact name</td><td><code>SEARCH -n "Castelldimezzo"</code></td></tr>
-        <tr><td><code>-c</code></td><td>Exact city</td><td><code>SEARCH -c Ancona</code></td></tr>
-        <tr><td><code>-t</code></td><td>Exact type</td><td><code>SEARCH -t Archeologia</code></td></tr>
-        <tr><td><code>-a</code></td><td>Exact address</td><td><code>SEARCH -a "Via Ferretti"</code></td></tr>
-        <tr><td><code>--n</code></td><td>Partial name</td><td><code>SEARCH --n castle</code></td></tr>
-        <tr><td><code>--c</code></td><td>Partial city</td><td><code>SEARCH --c piceno</code></td></tr>
-        <tr><td><code>--t</code></td><td>Partial type</td><td><code>SEARCH --t paesaggio</code></td></tr>
-        <tr><td><code>--a</code></td><td>Partial address</td><td><code>SEARCH --a piazza</code></td></tr>
-        <tr><td><code>-o</code></td><td>Opening days</td><td><code>SEARCH -o lunedì</code></td></tr>
-    </table>
+bash
+Copy
+Edit
+SEARCH [OPTION] "QUERY"
+Option	Search Type	Example
+-n	Exact name	SEARCH -n "Castelldimezzo"
+-c	Exact city	SEARCH -c Ancona
+-t	Exact type	SEARCH -t Archeologia
+-a	Exact address	SEARCH -a "Via Ferretti"
+--n	Partial name	SEARCH --n castle
+--c	Partial city	SEARCH --c piceno
+--t	Partial type	SEARCH --t paesaggio
+--a	Partial address	SEARCH --a piazza
+-o	Opening days	SEARCH -o lunedì
 
-    <h2 id="data-format">📊 Data Format</h2>
-    <pre>ImageURL;Caption;Type;Name;City;Address;Number;Phone;Email;Website;Latitude;Longitude;OpeningHours</pre>
+📊 Data Format
+The system expects data in the following format:
 
-    <h2 id="troubleshooting">🛠️ Troubleshooting</h2>
-    <h3>Common Issues</h3>
-    <table>
-        <tr><th>Error</th><th>Solution</th></tr>
-        <tr><td>Connection failed</td><td>Verify server is running</td></tr>
-        <tr><td>Invalid command format</td><td>Check command syntax</td></tr>
-        <tr><td>Index out of bounds</td><td>Use valid index (0 ≤ index < dataset size)</td></tr>
-    </table>
+mathematica
+Copy
+Edit
+ImageURL;Caption;Type;Name;City;Address;Number;Phone;Email;Website;Latitude;Longitude;OpeningHours
+🛠️ Troubleshooting
+Common Issues
+Error	Solution
+Connection failed	Verify the server is running
+Invalid command format	Check the command syntax
+Index out of bounds	Use a valid index (0 ≤ index < dataset size)
 
-    <h2 id="license">📄 License</h2>
-    <div class="license">
-        This project is licensed under the MIT License - see the 
-        <a href="LICENSE">LICENSE</a> file for details.<br><br>
-        <em>Academic Project - Not for Commercial Use</em>
-    </div>
-</body>
-</html>
