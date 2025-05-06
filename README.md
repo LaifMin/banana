@@ -11,25 +11,22 @@ This project is an academic initiative designed for managing cultural heritage d
 
 ## 🚀 Installation
 
-Clone the repository and build the project using Maven:
+Clone the repository :
 
-```bash
 # Clone repository
-git clone https://github.com/yourusername/cultural-heritage-system.git
-cd cultural-heritage-system
+git clone https://github.com/LaifMin/ProgettoServerClient_ArcheologiaRegioneMarche.git
 
-⌨️ Command Reference
-Basic Commands
-Command	Description
-HELP	Show command reference
-END	Disconnect from server
+
+## ⌨️ Command Reference
+ Basic Commands   Command	Description
+                 
+HELP	            Show command reference
+END              	Disconnect from server
 
 Search Operations
 Search commands follow this syntax:
 
-bash
-Copy
-Edit
+
 SEARCH [OPTION] "QUERY"
 Option	Search Type	Example
 -n	Exact name	SEARCH -n "Castelldimezzo"
@@ -42,10 +39,6 @@ Option	Search Type	Example
 --a	Partial address	SEARCH --a piazza
 -o	Opening days	SEARCH -o lunedì
 
-📊 Data Format
+## 📊 Data Format
 The system expects data in the following format:
-
-mathematica
-Copy
-Edit
 ImageURL;Caption;Type;Name;City;Address;Number;Phone;Email;Website;Latitude;Longitude;OpeningHours
