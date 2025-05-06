@@ -18,5 +18,34 @@ Clone the repository and build the project using Maven:
 git clone https://github.com/yourusername/cultural-heritage-system.git
 cd cultural-heritage-system
 
-# Build project
-mvn clean package
+⌨️ Command Reference
+Basic Commands
+Command	Description
+HELP	Show command reference
+END	Disconnect from server
+
+Search Operations
+Search commands follow this syntax:
+
+bash
+Copy
+Edit
+SEARCH [OPTION] "QUERY"
+Option	Search Type	Example
+-n	Exact name	SEARCH -n "Castelldimezzo"
+-c	Exact city	SEARCH -c Ancona
+-t	Exact type	SEARCH -t Archeologia
+-a	Exact address	SEARCH -a "Via Ferretti"
+--n	Partial name	SEARCH --n castle
+--c	Partial city	SEARCH --c piceno
+--t	Partial type	SEARCH --t paesaggio
+--a	Partial address	SEARCH --a piazza
+-o	Opening days	SEARCH -o lunedì
+
+📊 Data Format
+The system expects data in the following format:
+
+mathematica
+Copy
+Edit
+ImageURL;Caption;Type;Name;City;Address;Number;Phone;Email;Website;Latitude;Longitude;OpeningHours
