@@ -30,13 +30,21 @@ Search commands follow this syntax:
 SEARCH [OPTION] "QUERY"
 Option	Search Type	Example
 -n	Exact name	SEARCH -n "Castelldimezzo"
+
 -c	Exact city	SEARCH -c Ancona
+
 -t	Exact type	SEARCH -t Archeologia
+
 -a	Exact address	SEARCH -a "Via Ferretti"
+
 --n	Partial name	SEARCH --n castle
+
 --c	Partial city	SEARCH --c piceno
+
 --t	Partial type	SEARCH --t paesaggio
+
 --a	Partial address	SEARCH --a piazza
+
 -o	Opening days	SEARCH -o lunedì
 
 ## 📊 Data Format
